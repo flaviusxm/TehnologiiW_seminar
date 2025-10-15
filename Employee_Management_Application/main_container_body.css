@@ -1,0 +1,137 @@
+/* === CSS RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    margin: 3% 3% 3% 3%;
+}
+/* === Layout === */
+.main-container {
+  max-width: 960px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* === Headings === */
+h3, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+
+.search-container,.actions-container {
+  background-color: #bbc1d1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-fields input,
+select {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.search-button {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.search-button button,
+.actions-container button,
+.form-buttons-row button {
+  padding: 10px 20px;
+  background-color: #0050a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #01274c;
+}
+
+/* === Table === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #000000;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* === Overlay pentru formular === */
+#form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* fundal întunecat */
+  display: none; /* ascuns implicit */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px; /* spațiu între label și input */
+}
+
+.form-row label {
+  width: 120px; /* sau auto, în funcție de cât text ai */
+  font-weight: 500;
+}
+
+.form-row input {
+  flex: 1; /* ocupă tot spațiul disponibil */
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+
+
+.form-buttons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}

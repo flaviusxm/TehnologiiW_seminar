@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMS</title>
+<link rel="stylesheet" href="/main_container_body.css">
+</head>
+<body>
+
+<div id="form-overlay">
+  <div class="form-container">
+    <h2 class="form-title">New Employee</h2>
+    <form id="employee-form" class="modern-form">
+      <div class="form-row">
+        <label for="id">ID</label>
+        <input type="text" name="id" id="id" required />
+      </div>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div class="form-row">
+        <label for="role">Role</label>
+        <input type="text" name="role" id="role" required />
+      </div>
+      <div class="form-row">
+        <label for="salary">Salary</label>
+        <input type="text" name="salary" id="salary" required />
+      </div>
+      <div class="form-buttons-row">
+        <button type="submit" id="submit-employee">Add</button>
+        <button type="button" id="form-cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <div class="main-container">
+    <div class="search-container">
+      <h2>Search Bar</h2>
+      <label for="search-type">Filters:</label>
+      <select id="search-type">
+        <option value="id">Employee ID</option>
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+        <option value="department">Department</option>
+        <option value="salary">Salary</option>
+        <option value="country">Country</option>
+      </select>
+    <br></br>
+      <label for="search-input">Enter value:</label>
+      <div class="search-fields">
+        <input type="text" id="search-input" placeholder="..." />
+      </div>
+      <div class="search-button">
+        <button type="button">Search</button>
+      </div>
+    </div>
+
+    <div class="actions-container">
+      <h2>Actions</h2>
+      <button id="add-employee">Add Employee</button>
+      <button id="show-all">Show All</button>
+    </div>
+
+    <div class="data-container">
+      <h2>Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Role</th><th>Salary</th><th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="employee-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="open_close_employee_form.js"></script>
+</body>
+</html>
