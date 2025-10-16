@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EMS</title>
-<link rel="stylesheet" href="/main_container_body.css">
+<link rel="stylesheet" href="main_container_body.css">
 </head>
 <body>
 
@@ -61,8 +61,12 @@
 
     <div class="actions-container">
       <h2>Actions</h2>
+    <div class="actions-container-buttons">
       <button id="add-employee">Add Employee</button>
+      <button id="salary-mean">Salary Mean</button>
       <button id="show-all">Show All</button>
+      <button id="export-csv">Export as CSV</button>
+    </div>
     </div>
 
     <div class="data-container">
@@ -70,7 +74,7 @@
       <table>
         <thead>
           <tr>
-            <th>ID</th><th>Name</th><th>Role</th><th>Salary</th><th>Delete</th>
+            <th>ID</th><th>Name</th><th>Role</th><th>Salary (RON) </th><th>Delete</th>
           </tr>
         </thead>
         <tbody id="employee-table-body"></tbody>
@@ -78,5 +82,8 @@
     </div>
   </div>
   <script src="open_close_employee_form.js"></script>
+  <script src="save_employee_local_storage.js"></script>
+  <script src="show_all_employees.js"></script>
+  <script src="salary_mean.js"></script>
 </body>
 </html>
