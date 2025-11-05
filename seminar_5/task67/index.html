@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+         <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Formular</title>   
+</head>
+<body>
+    <h2>Formular metoda GET</h2>
+    <form action="/search" method="get">
+        <label for="search">Cauta:</label>
+        <input type="text" id="search" name="search"/>
+        <button type="submit">Send</button>
+    </form>
+
+    <h2>Formular metoda POST</h2>
+    <form action="/submit" method="post">
+        <label for="name">Nume:</label>
+        <input type="text" id="name" name="name"/>
+        <button type="submit">Send</button>
+    </form>
+    <h2>Formular pentru resursa dupa ID</h2>
+    <form onsubmit="getter(resource)">
+        <label for="resourceId">Id resursa:</label>
+        <input type="text" id="resourceId"/>
+        <button type="submit">Cauta resursa</button>
+    </form>
+    <script>
+        async function getter(e){
+            e.preventDefault();
+            const id=document.getElementById('resourceId').value;
+            const text_raspuns=await fetch(`/resource/${id}`).text();
+        document.getElementById('result').innerText=text_raspuns;
+        }
+    </script>
+</body>
+ </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda Telefonica</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1> Agenda Telefonica </h1>
+    <div class="container-main">
+        <div class="container-form">
+        <h2>Adauga Contact</h2>
+        <form id="form_contact">
+            <div class="form-data">
+                <label for="nume">Nume:</label>
+                <input type="text" id="nume" name="nume" required>
+            </div>
+            <div class="form-data">
+                <label for="telefon">Telefon:</label>
+                <input type="text" id="telefon"name="telefon"required>
+            </div>
+<button type="submit">Adauga</button>
+        </form>
+    </div>
+    <div class="container-tabela">
+        <h2>Contacte</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Telefon</th>
+                <th>Actiuni</th>
+            </tr>
+            </thead>
+            <tbody id="body_contacts">
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>
