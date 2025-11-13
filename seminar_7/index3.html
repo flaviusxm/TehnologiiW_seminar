@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seminar 7</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, 70px);
+      grid-template-rows: repeat(8, 70px);
+      border: 1px solid #333;
+    
+    }
+
+    .patrat {
+      width: 70px;
+      height: 70px;
+    }
+
+    .patrat:nth-child(odd) {
+      background-color: #302f2f; 
+    }
+
+    .patrat:nth-child(even) {
+      background-color: #adadad; 
+    }
+    .row:nth-child(even) .patrat:nth-child(odd) {
+      background-color: #adadad;
+    }
+
+    .row:nth-child(even) .patrat:nth-child(even) {
+      background-color: #302f2f;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="chessboard">
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+    <div class="row">
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+      <div class="patrat"></div><div class="patrat"></div><div class="patrat"></div><div class="patrat"></div>
+    </div>
+  </div>
+</body>
+</html>
