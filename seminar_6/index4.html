@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seminar 6</title>
+  <style>
+    .container_form{
+        max-width: 500px;
+        margin: 150px;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: rgb(202, 202, 202);
+    }
+    label{
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+     input[type="text"],
+    select,
+    textarea {
+        margin-bottom: 15px;
+    }
+   input[type="text"],select{
+    height: 25px;
+   }
+    textarea{
+        height: 120px;
+    }
+    button{
+        max-width: 40%;
+        background-color: greenyellow;
+        border:  1px solid white;
+        height: 40px;
+    }
+  </style>
+</head>
+<body>
+<div class="container_form">
+    <h2>Contact Form</h2>
+
+    <form>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" placeholder="Your name">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" placeholder="Yout last name">
+        <label for="country">Country</label>
+        <select id="country">
+            <option value="">Select a country</option>
+            <option value="hungary" selected>Hungary</option>
+            <option value="romania">Romania</option>
+     
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" placeholder="Write something.."></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>
