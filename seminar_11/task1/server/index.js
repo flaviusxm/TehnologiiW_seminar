@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const { Pool } = require("pg");
+const fs = require('fs'); // Added fs module
+
 const app = express()
 app.use(cors());
 app.use(express.json());
@@ -10,6 +12,19 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
 });
+
+const initDb = async () => {
+  try {
+    const client = await pool.connect();
+    const sql = fs.readFileSync(path.join(__dirname, "schema.sql")).toString();
+    await client.query(sql);
+    client.release();
+    console.log("Baza de date a fost verificata/initializata cu succes!");
+  } catch (err) {
+    console.error("Eroare la initializarea DB:", err);
+    process.exit(1);
+  }
+};
 
 app.get("/users", async (req, res) => {
   try {
@@ -25,4 +40,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 const PORT = process.env.port || 5042;
-app.listen(PORT, () => console.log(`Server runs on ${PORT}`));
+
+const startServer = async () => {
+  await initDb();
+  app.listen(PORT, () => console.log(`Server runs on ${PORT}`));
+};
+
+startServer();
