@@ -1,0 +1,28 @@
+require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
+const { Pool } = require("pg");
+const app = express()
+app.use(cors());
+app.use(express.json());
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
+
+app.get("/users", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT name, type FROM users");
+    res.json(result.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Eroare server");
+  }
+});
+app.use(express.static(path.join(__dirname, "../build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
+});
+const PORT = process.env.port || 5042;
+app.listen(PORT, () => console.log(`Server runs on ${PORT}`));
